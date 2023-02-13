@@ -28,8 +28,9 @@ public struct ExpandableText: View {
     @State private(set) var truncated : Bool = false
     @State private(set) var fullSize: CGFloat = 0
     
-    public init(text: String) {
+    public init(text: String, expand: Bool = false) {
         self.text = text
+        self.expand = expand
     }
     public var body: some View {
         ZStack(alignment: .bottomTrailing){
