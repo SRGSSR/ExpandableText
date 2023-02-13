@@ -24,13 +24,13 @@ public struct ExpandableText: View {
     
     var animation: Animation? = .none
     
-    @State var expand : Bool = false
+    @Binding var expand : Bool
     @State private(set) var truncated : Bool = false
     @State private(set) var fullSize: CGFloat = 0
     
-    public init(text: String, expand: Bool = false) {
+    public init(text: String, expand: Binding<Bool>) {
         self.text = text
-        self.expand = expand
+        _expand = expand
     }
     public var body: some View {
         ZStack(alignment: .bottomTrailing){
