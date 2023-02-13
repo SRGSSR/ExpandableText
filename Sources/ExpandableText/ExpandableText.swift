@@ -24,9 +24,9 @@ public struct ExpandableText: View {
     
     var animation: Animation? = .none
     
-    @State private var expand : Bool = false
-    @State private var truncated : Bool = false
-    @State private var fullSize: CGFloat = 0
+    @State var expand : Bool = false
+    @State private(set) var truncated : Bool = false
+    @State private(set) var fullSize: CGFloat = 0
     
     public init(text: String) {
         self.text = text
